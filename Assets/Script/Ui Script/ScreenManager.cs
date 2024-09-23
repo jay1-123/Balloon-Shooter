@@ -8,10 +8,13 @@ public class ScreenManager : MonoBehaviour
 
     public void Awake()
     {
+        Time.timeScale = 0;
         instance = this;
+        currentScreen.canvas.enabled = true;
     }
     private void Start()
     {
+        
         Time.timeScale = 0;
     }
     public void ChangeScreen(ScreenType screentype)
@@ -43,3 +46,4 @@ public class ScreenManager : MonoBehaviour
         public Canvas canvas;
     }
 }
+

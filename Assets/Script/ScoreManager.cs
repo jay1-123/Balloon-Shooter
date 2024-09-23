@@ -5,7 +5,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    private int score = 0;
+    public int score = 0;
     private int combo = 1;
     public float comboTimeWindow = 2f; // Time window for maintaining a combo
     private float comboTimer;
@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
         if (combo > 1)
         {
             comboTimer -= Time.deltaTime;
-            Debug.Log(comboTimer);
+            //Debug.Log(comboTimer);
             if (comboTimer <= 0f)
             {
                 ResetCombo();  // Reset combo if timer runs out
@@ -67,7 +67,10 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = "Score: " + score.ToString();
         }
     }
-
+    public int GetScore()
+    {
+        return score;
+    }
     // Update the combo multiplier text on the UI
     void UpdateComboUI()
     {

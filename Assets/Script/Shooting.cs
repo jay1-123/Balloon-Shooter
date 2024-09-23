@@ -5,7 +5,7 @@ public class Shooting : MonoBehaviour
 {
     public Camera mainCamera;
     public int pointsPerBalloon = 10;
-
+    public float spawnDecrease;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -30,6 +30,7 @@ public class Shooting : MonoBehaviour
                 hit.collider.gameObject.SetActive(false);
                 //ScoreManager.Instance.AddScore(10);  // Example score increment
                 ScoreManager.Instance.AddScore(pointsPerBalloon);
+                spawnDecrease = -0.2f;
             }
         }
     }
